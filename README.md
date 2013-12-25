@@ -1,4 +1,0 @@
-earnbook
-========
-
-Testing
