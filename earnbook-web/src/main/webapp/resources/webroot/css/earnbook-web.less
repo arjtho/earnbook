@@ -1,0 +1,62 @@
+@import "earnbook-web-constants";
+@import "earnbook-common-constants";
+
+body {
+font-family: @earnbook-font-family;
+font-size: 10px;
+}
+.header-panel {
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    right bottom,
+    color-stop(0, #3399FF),
+    color-stop(1, #99FFE0)
+  );
+  background-image: -o-linear-gradient(bottom, #3399FF 0%, #99FFE0 100%);
+  background-image: -moz-linear-gradient(bottom, #3399FF 0%, #99FFE0 100%);
+  background-image: -webkit-linear-gradient(bottom, #3399FF 0%, #99FFE0 100%);
+  background-image: -ms-linear-gradient(bottom, #3399FF 0%, #99FFE0 100%);
+  background-image: linear-gradient(to bottom, #3399FF 0%, #99FFE0 100%);
+  min-height: @header-min-height;
+}
+
+.brand-logo {
+  margin-top: 10px;
+  font-size: 40px;
+  color:@brand-logo-color;
+  height: 40px;
+  font-weight: normal;
+}
+
+.brand-slogan {
+  color:@brand-logo-color;
+}
+.app-max-width {
+  max-width: @earnbook-max-width;
+}
+
+.header-element-spacing {
+ padding-right: 10px;
+ padding-left: 0px;
+}
+.header-lable-padding {
+  margin-top: 4px;
+}
+
+.header-right-panel {
+  padding-top: 20px;
+}
+
+.header-button {
+  margin-top: 2px;
+  border: 1px solid @header-element-bolder-color;
+  background-color :#003F87;
+  color:#ffffff;
+  font-size: 12px;
+}
+
+
+
+
+
