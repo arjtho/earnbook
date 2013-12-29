@@ -57,7 +57,7 @@
 
     <script>
         $(document).ready(function() {
-          //  $('#search-categories').chosen();
+            $('#search-categories').chosen();
             EbwLoginNS.init();
         });
     </script>
