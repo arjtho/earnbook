@@ -5,6 +5,7 @@
     <definition name="index" template="/WEB-INF/view/index.jsp">
         <put-attribute name="title" value="Earnbook"/>
         <put-attribute name="header" value="/WEB-INF/view/header/header.jsp"/>
+        <put-attribute name="menu-bar" value="/WEB-INF/view/header/menu-bar.jsp"/>
         <put-attribute name="body-layout" value="/WEB-INF/view/body/body-layout.jsp" cascade="true"/>
         <put-attribute name="home" value="/WEB-INF/view/contents/home/home.jsp" cascade="true"/>
         <put-attribute name="vanilla-model" value="/WEB-INF/view/modal/model.jsp"/>

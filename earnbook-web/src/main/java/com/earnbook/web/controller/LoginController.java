@@ -27,6 +27,7 @@ public class LoginController {
     @RequestMapping(value="/login", method = RequestMethod.POST, produces="application/json")
     @ResponseBody
     public UserDetails doLogin(ModelMap model, @RequestBody UserDetails userDetails) {
-        return loginService.doLogin(userDetails);
+        UserDetails userDetailsResult = loginService.doLogin(userDetails);
+        return userDetailsResult;
     }
 }

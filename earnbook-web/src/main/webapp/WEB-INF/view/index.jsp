@@ -26,6 +26,8 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="resources/eb-web/ext/font-awesome/css/font-awesome.min.css">
 
+    <!-- chosen plugin CSS -->
+    <link rel="stylesheet" href="resources/eb-web/ext/chosen/chosen.min.css">
 
     <!-- Application less file-->
     <link rel="stylesheet/less" type="text/css" href="resources/eb-web/css/earnbook-web.less"/>
@@ -37,6 +39,10 @@
 
     <!-- Less standard css -->
     <script src="resources/eb-web/ext/less/less-1.4.1.min.js"></script>
+
+    <!-- chosen plugin -->
+    <script src="resources/eb-web/ext/chosen/chosen.jquery.min.js"></script>
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -51,6 +57,7 @@
 
     <script>
         $(document).ready(function() {
+          //  $('#search-categories').chosen();
             EbwLoginNS.init();
         });
     </script>
@@ -59,6 +66,9 @@
 <body>
     <%--Application Body Contents--%>
     <tiles:insertAttribute name="header" />
+
+    <%--Application main Menu bar Contents--%>
+    <tiles:insertAttribute name="menu-bar" />
 
     <%--Application Body Contents--%>
     <tiles:insertAttribute name="body-layout"/>

@@ -29,12 +29,90 @@ font-size: 10px;
 }
 
 .input-element-large {
-  padding: 2px;
+  padding: 3px;
+  color: @text-color;
+  border-radius: 2px;
   border: 1px solid @header-element-bolder-color;
-  font-size: @input-element-font-size * 2;
-  width: @input-element-width * 2;
-  height: @input-element-height;
+  font-size: @input-element-font-size;
+  width: @input-element-width * @input-element-proportion;
+  height: @input-element-height * 1.3;
 }
+
+.related-element-spacing-left {
+ margin-left : @distance-between-two-related-elements-left;
+}
+
+.related-element-spacing-right {
+  margin-left : @distance-between-two-related-elements-left;
+}
+
+.right-padding {
+  padding-right: 12px;
+}
+
+.header-background {
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    right bottom,
+    color-stop(0, #3399FF),
+    color-stop(1, #99FFE0)
+  );
+  background-image: -o-linear-gradient(bottom, #3399FF 0%, #99FFE0 100%);
+  background-image: -moz-linear-gradient(bottom, #3399FF 0%, #99FFE0 100%);
+  background-image: -webkit-linear-gradient(bottom, #3399FF 0%, #99FFE0 100%);
+  background-image: -ms-linear-gradient(bottom, #3399FF 0%, #99FFE0 100%);
+  background-image: linear-gradient(to bottom, #3399FF 0%, #99FFE0 100%);
+}
+
+.menu-bar-background {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, #FFFFFF),
+    color-stop(0.95, #F2F2F2)
+  );
+  background-image: -o-linear-gradient(top, #FFFFFF 0%, #F2F2F2 95%);
+  background-image: -moz-linear-gradient(top, #FFFFFF 0%, #F2F2F2 95%);
+  background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #F2F2F2 95%);
+  background-image: -ms-linear-gradient(top, #FFFFFF 0%, #F2F2F2 95%);
+  background-image: linear-gradient(to top, #FFFFFF 0%, #F2F2F2 95%);
+}
+
+
+.header-panel {
+  .header-background;
+  min-height: @header-min-height;
+}
+
+.menu-bar-panel {
+  .menu-bar-background;
+  height: @menu-bar-height;
+  margin-top: 2px;
+  a{
+    font-size: 12px !important;
+    padding: 10px 10px 10px 10px !important;
+    color: @text-color;
+    text-size:@text-size-medium;
+  }
+  .vertical-divider {
+    margin-top: 14px;
+    border-right: 1px solid #B4CDCD;
+    width: 0px;
+    height: 11px;
+  }
+
+  #search-options {
+    a{
+      padding: 0px !important;
+    }
+  }
+}
+
+
+
+
 
 
 

@@ -8,7 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "spring" uri = "http://www.springframework.org/tags" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div class="header-panel" id="earnbook-header-panel">
     <div class="app-max-width container">
         <div class="pull-left">
@@ -32,8 +31,10 @@
                 <div class="col-sm-5 header-element-spacing ">
                     <input id="ebw-login-password" type="password" class="input-element-small" placeholder="<spring:message code="login.user.password"/>">
                 </div>
-                <div class="col-sm-2 header-element-spacing ">
-                    <input id="btnLogin" type="button" value="<spring:message code="login.user.sign.in"/>" class="header-button">
+                <div class="col-sm-2 header-element-spacing">
+                    <button id="btnLogin" class="btn btn-primary header-button" type="button">
+                        <spring:message code="login.user.sign.in"/>
+                    </button>
                 </div>
             </div>
             <div class="row">
