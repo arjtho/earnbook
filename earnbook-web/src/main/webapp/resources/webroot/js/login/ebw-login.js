@@ -37,7 +37,7 @@
                 var userId = $(fieldPrefix + "userId").val();
                 var password = $(fieldPrefix + "password").val();
                 return {
-                    userId: userId,
+                    email: userId,
                     password: password
                 }
             },
