@@ -10,6 +10,14 @@
                 <value>classpath*:/META-INF/ebs-applicationContext-crosstrack-ejbs.xml</value>
                 <value>classpath*:/META-INF/ebs-applicationContext-general-spring.xml</value>
                 <value>classpath*:/META-INF/ebs-applicationContext-services.xml</value>
+                <value>classpath*:/META-INF/ebs-applicationContext-entity-manager-factory.xml</value>
+                <value>classpath*:/META-INF/ebs-applicationContext-daos.xml</value>
+                <value>classpath*:/META-INF/ebs-applicationContext-facades.xml</value>
+                <value>classpath*:/META-INF/ebs-applicationContext-factories.xml</value>
+                <value>classpath*:/META-INF/ebs-applicationContext-transactions.xml</value>
+                <value>classpath*:/META-INF/persistence.xml</value>
+
+
             </list>
         </constructor-arg>
     </bean>

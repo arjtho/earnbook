@@ -2,20 +2,22 @@ package com.earnbook.ebs.services.builder.user;
 
 import com.earnbook.ebs.client.model.domain.user.UserDetails;
 import com.earnbook.ebs.services.builder.Builder;
+import com.earnbook.ebs.services.persistence.user.UserJpa;
 
 public class UserDetailsBuilder implements Builder<UserDetails> {
-
-    private String userId;
-    private String userName;
+    private long id;
+    private String email;
     private String password;
+    private String firstName;
+    private String lastName;
 
-    public UserDetailsBuilder setUserId(String userId) {
-        this.userId = userId;
+    public UserDetailsBuilder setId(long id) {
+        this.id = id;
         return this;
     }
 
-    public UserDetailsBuilder setUserName(String userName) {
-        this.userName = userName;
+    public UserDetailsBuilder setEmail(String email) {
+        this.email = email;
         return this;
     }
 
@@ -24,16 +26,26 @@ public class UserDetailsBuilder implements Builder<UserDetails> {
         return this;
     }
 
-    public UserDetails createUserDetails(final String userId, final String userName, final String password) {
-        return new UserDetails(userId, userName, password);
+    public UserDetailsBuilder setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
     }
 
+    public UserDetailsBuilder setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public UserDetails createUserDetails() {
+        return new UserDetails(id, email, password, firstName, lastName);
+    }
     /**
      * Build modal object.
      * @return
      */
     @Override
     public UserDetails build() {
-        return new UserDetails(userId, userName, password);
+        return new UserDetails(id, email, password, firstName, lastName);
     }
+
 }

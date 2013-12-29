@@ -1,11 +1,14 @@
-package com.earnbook.ebs.client.model.domain.user;
+package com.earnbook.ebs.services.persistence.user;
+
+
 
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-
-public class UserDetails implements Serializable {
+@Entity
+@Table(name="user")
+public class UserJpa implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -15,10 +18,10 @@ public class UserDetails implements Serializable {
     private String password;
     private String email;
 
-    public UserDetails() {
+    public UserJpa() {
     }
 
-    public UserDetails(long id, String email, String password, String firstName, String lastName) {
+    public UserJpa(long id, String email, String password, String firstName, String lastName) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -27,7 +30,9 @@ public class UserDetails implements Serializable {
 
     }
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column (name = "id")
     public long getId() {
         return id;
     }
@@ -36,6 +41,7 @@ public class UserDetails implements Serializable {
         this.id = id;
     }
 
+    @Column(name ="first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -43,7 +49,7 @@ public class UserDetails implements Serializable {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
+    @Column(name ="last_name")
     public String getLastName() {
         return lastName;
     }
@@ -51,7 +57,7 @@ public class UserDetails implements Serializable {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
+    @Column(name ="password")
     public String getPassword() {
         return password;
     }
@@ -60,6 +66,7 @@ public class UserDetails implements Serializable {
         this.password = password;
     }
 
+    @Column(name ="email")
     public String getEmail() {
         return email;
     }
