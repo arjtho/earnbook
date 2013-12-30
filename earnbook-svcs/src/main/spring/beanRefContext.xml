@@ -16,10 +16,6 @@
                 <value>classpath*:/META-INF/ebs-applicationContext-factories.xml</value>
                 <value>classpath*:/META-INF/ebs-applicationContext-transactions.xml</value>
                 <value>classpath*:/META-INF/hibernate.cfg.xml</value>
-
-
-
-
             </list>
         </constructor-arg>
     </bean>

@@ -3,9 +3,10 @@ package com.earnbook.ebs.services.ejb.login;
 import com.earnbook.ebs.client.delegate.service.LoginService;
 import com.earnbook.ebs.client.model.domain.user.UserDetails;
 import com.earnbook.ebs.services.builder.user.UserDetailsBuilder;
-import com.earnbook.ebs.services.dao.login.UserDao;
+import com.earnbook.ebs.services.dao.user.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
 
 @Transactional
 public class LoginServiceImpl implements LoginService {

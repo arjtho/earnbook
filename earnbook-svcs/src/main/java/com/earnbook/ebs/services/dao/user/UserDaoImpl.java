@@ -1,13 +1,13 @@
-package com.earnbook.ebs.services.dao.login;
+package com.earnbook.ebs.services.dao.user;
 
 import com.earnbook.ebs.client.model.domain.user.UserDetails;
 import com.earnbook.ebs.services.builder.user.UserDetailsBuilder;
 import com.earnbook.ebs.services.persistence.user.UserJpa;
 import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
-import org.springframework.stereotype.Repository;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 /**
  * Created by yash on 12/29/13.
  */
