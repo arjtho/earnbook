@@ -15,8 +15,6 @@
                 <value>classpath*:/META-INF/ebs-applicationContext-facades.xml</value>
                 <value>classpath*:/META-INF/ebs-applicationContext-factories.xml</value>
                 <value>classpath*:/META-INF/ebs-applicationContext-transactions.xml</value>
-                <value>classpath*:/META-INF/persistence.xml</value>
-
 
             </list>
         </constructor-arg>
