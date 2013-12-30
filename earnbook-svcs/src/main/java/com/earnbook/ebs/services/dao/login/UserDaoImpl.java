@@ -20,7 +20,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public UserDetailsBuilder getUser(UserDetails user) {
         Criteria loginCriteria = sessionFactory.getCurrentSession().createCriteria(UserJpa.class);
-        loginCriteria.add(Restrictions.eq("email", user.getEmail())).add(Restrictions.eq("password", user.getPassword()));
+        loginCriteria.add(Restrictions.eq("email", user.getEmail()));
         UserJpa userJap= (UserJpa) loginCriteria.uniqueResult();
         
         return buildUserDetailsBuilder(userJap);
@@ -28,6 +28,10 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void add(UserDetails user) {
+
+
+
+
 
     }
 

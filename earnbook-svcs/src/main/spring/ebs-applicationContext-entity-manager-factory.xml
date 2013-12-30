@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="dbDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-        <property name="jndiName" value="jdbc/earnbookDB"/>
+        <property name="jndiName" value="earnbookDB"/>
     </bean>
 
 
@@ -12,7 +12,7 @@
           class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
         <property name="dataSource" ref="dbDataSource" />
         <property name="configLocation">
-            <value>classpath*:/META-INF/hibernate.cfg.xml</value>
+            <value>hibernate.cfg.xml</value>
         </property>
         <property name="configurationClass">
             <value>org.hibernate.cfg.AnnotationConfiguration</value>
