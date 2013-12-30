@@ -5,7 +5,9 @@ import com.earnbook.ebs.client.model.domain.user.UserDetails;
 import com.earnbook.ebs.services.builder.user.UserDetailsBuilder;
 import com.earnbook.ebs.services.dao.login.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class LoginServiceImpl implements LoginService {
 
     @Autowired
