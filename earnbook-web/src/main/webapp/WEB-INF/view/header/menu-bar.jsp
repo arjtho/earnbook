@@ -13,9 +13,9 @@
     <div class="app-max-width container">
         <ul class="nav navbar-nav navbar-left">
             <li><a href="#" style="font-weight: bold"><spring:message code="menu.bar.home"/></a></li>
-            <li><div class="vertical-divider"></div></li>
+            <li><div class="menubar-vertical-divider"></div></li>
             <li><a href="#"><spring:message code="menu.bar.deals"/></a></li>
-            <li><div class="vertical-divider"></div></li>
+            <li><div class="menubar-vertical-divider"></div></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="menu.bar.businessses"/> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -25,9 +25,9 @@
                     <li><a href="#">Education</a></li>
                 </ul>
             </li>
-            <li><div class="vertical-divider"></div></li>
+            <li><div class="menubar-vertical-divider"></div></li>
             <li><a href="#"><spring:message code="menu.bar.about.us"/></a></li>
-            <li><div class="vertical-divider"></div></li>
+            <li><div class="menubar-vertical-divider"></div></li>
             <li><a href="#"><spring:message code="menu.bar.help"/></a></li>
         </ul>
         <ul id="search-options" class="nav navbar-nav navbar-right right-padding"  style="padding-top: 4px;">

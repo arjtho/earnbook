@@ -13,9 +13,10 @@
             <div class="col-sm-5">
                 <tiles:insertAttribute name="signup"/>
             </div>
-            <div class="col-sm-1" style="border-right: 1px solid #C4C4AD;height: 500px" >
+            <div class="col-sm-1" >
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 left-vertical-border" style="height: 300px">
+                <tiles:insertAttribute name="welcome-note"/>
             </div>
         </div>
     </div>
