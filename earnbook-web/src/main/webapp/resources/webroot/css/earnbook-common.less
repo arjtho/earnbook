@@ -7,7 +7,7 @@ font-size: 10px;
 
 .input-element-small {
   padding: 2px;
-  border: 1px solid @header-element-bolder-color;
+  border: 1px solid @element-bolder-color;
   font-size: @input-element-font-size;
   width: @input-element-width;
   height: @input-element-height;
@@ -32,10 +32,15 @@ font-size: 10px;
   padding: 3px;
   color: @text-color;
   border-radius: 2px;
-  border: 1px solid @header-element-bolder-color;
+  border: 1px solid @element-bolder-color;
   font-size: @input-element-font-size;
   width: @input-element-width * @input-element-proportion;
   height: @input-element-height * 1.3;
+}
+
+.signup-input-fields {
+  .input-element-large;
+  width: 100%;
 }
 
 .related-element-spacing-left {
@@ -46,8 +51,21 @@ font-size: 10px;
   margin-left : @distance-between-two-related-elements-left;
 }
 
+.distance-between-heading-top {
+  margin-top:@distance-between-heading-top;
+}
+
+.related-element-distance-top {
+  margin-top: @distance-between-two-related-elements-top;
+}
+
+.element-distance-top {
+  margin-top: @distance-between-two-elements-top;
+}
+
+
 .right-padding {
-  padding-right: 12px;
+  padding-right: @distance-between-two-elements-left-right;
 }
 
 .header-background {
