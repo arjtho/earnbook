@@ -12,7 +12,7 @@
           class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
         <property name="dataSource" ref="dbDataSource" />
         <property name="configLocation">
-            <value>hibernate.cfg.xml</value>
+            <value>META-INF/hibernate.cfg.xml</value>
         </property>
         <property name="configurationClass">
             <value>org.hibernate.cfg.AnnotationConfiguration</value>

@@ -135,9 +135,6 @@
                     <include>
                         beanRefContext.xml
                     </include>
-                    <include>
-                        hibernate.cfg.xml
-                    </include>
                 </includes>
                 <filtering>false</filtering>
             </resource>

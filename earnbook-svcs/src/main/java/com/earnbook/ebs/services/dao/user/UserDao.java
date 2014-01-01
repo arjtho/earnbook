@@ -1,4 +1,4 @@
-package com.earnbook.ebs.services.dao.login;
+package com.earnbook.ebs.services.dao.user;
 
 import com.earnbook.ebs.client.model.domain.user.UserDetails;
 import com.earnbook.ebs.services.builder.user.UserDetailsBuilder;

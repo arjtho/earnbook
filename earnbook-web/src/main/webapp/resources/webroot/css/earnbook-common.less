@@ -7,7 +7,7 @@ font-size: 10px;
 
 .input-element-small {
   padding: 2px;
-  border: 1px solid @header-element-bolder-color;
+  border: 1px solid @element-bolder-color;
   font-size: @input-element-font-size;
   width: @input-element-width;
   height: @input-element-height;
@@ -32,10 +32,15 @@ font-size: 10px;
   padding: 3px;
   color: @text-color;
   border-radius: 2px;
-  border: 1px solid @header-element-bolder-color;
+  border: 1px solid @element-bolder-color;
   font-size: @input-element-font-size;
   width: @input-element-width * @input-element-proportion;
   height: @input-element-height * 1.3;
+}
+
+.signup-input-fields {
+  .input-element-large;
+  width: 100%;
 }
 
 .related-element-spacing-left {
@@ -46,8 +51,25 @@ font-size: 10px;
   margin-left : @distance-between-two-related-elements-left;
 }
 
+.vertical divider {
+
+}
+
+.distance-between-heading-top {
+  margin-top:@distance-between-heading-top;
+}
+
+.related-element-distance-top {
+  margin-top: @distance-between-two-related-elements-top;
+}
+
+.element-distance-top {
+  margin-top: @distance-between-two-elements-top;
+}
+
+
 .right-padding {
-  padding-right: 12px;
+  padding-right: @distance-between-two-elements-left-right;
 }
 
 .header-background {
@@ -86,9 +108,16 @@ font-size: 10px;
   min-height: @header-min-height;
 }
 
+.left-vertical-border {
+  border-left: 1px solid #B4CDCD;
+}
+
+.welcome-note-icon {
+  color: orange;
+}
+
 .menu-bar-panel {
   .menu-bar-background;
-  height: @menu-bar-height;
   margin-top: 2px;
   a{
     font-size: 12px !important;
@@ -96,7 +125,8 @@ font-size: 10px;
     color: @text-color;
     text-size:@text-size-medium;
   }
-  .vertical-divider {
+
+  .menubar-vertical-divider {
     margin-top: 14px;
     border-right: 1px solid #B4CDCD;
     width: 0px;
