@@ -12,7 +12,7 @@
 <div class="menu-bar-panel" id="earnbook-header-menu-bar">
     <div class="app-max-width container">
         <ul class="nav navbar-nav navbar-left">
-            <li><a href="#" style="font-weight: bold"><spring:message code="menu.bar.home"/></a></li>
+            <li><a href="#" style="color:#000000;font-weight: bold"><spring:message code="menu.bar.home"/></a></li>
             <li><div class="menubar-vertical-divider"></div></li>
             <li><a href="#"><spring:message code="menu.bar.deals"/></a></li>
             <li><div class="menubar-vertical-divider"></div></li>
@@ -43,12 +43,12 @@
             </li>
             <li>
                 <div>
-                    <input type="text" class="input-element-large search-box">
+                    <input type="text" class="input-element-large search-box" style="width: 320px">
                 </div>
             </li>
             <li>
                 <div class="related-element-spacing-left">
-                    <button class="btn btn-primary" type="button" style="height: 30px">
+                    <button class="btn btn-primary" type="button" style="height: 29px;margin-top: 1px;padding-top: 4px">
                         <i class="fa fa-search" style="font-size: 18px;"></i>
                     </button>
                 </div>

@@ -9,39 +9,73 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <div class="distance-between-heading-top">
+    <div class="row distance-between-heading-top">
+        <div class="col-sm-6 text-color distance-between-heading-top" style="padding-right: 7px ">
+            First Name
+        </div>
+        <div class="col-sm-6  text-color distance-between-heading-top" style="padding-left: 8px">
+            Last Name
+        </div>
+    </div>
     <div class="row">
-        <div class="col-sm-6">
-            <input type="text" class="signup-input-fields" placeholder="First Name">
+        <div class="col-sm-6" style="padding-right: 7px">
+            <input type="text" class="signup-input-fields">
         </div>
-        <div class="col-sm-6">
-            <input type="text" class="signup-input-fields"  placeholder="Last Name">
-        </div>
-    </div>
-
-    <div class="row element-distance-top">
-        <div class="col-sm-12">
-            <input type="text" class="signup-input-fields" placeholder="Email Id">
-        </div>
-    </div>
-    <div class="row element-distance-top">
-        <div class="col-sm-12">
-            <input type="text" class="signup-input-fields" placeholder="Confirm Email Id">
-        </div>
-    </div>
-    <div class="row element-distance-top">
-        <div class="col-sm-12">
-            <input type="text" class="signup-input-fields" placeholder="Password">
-        </div>
-    </div>
-    <div class="row element-distance-top">
-        <div class="col-sm-12">
-            <input type="text" class="signup-input-fields" placeholder="Confirm Password">
+        <div class="col-sm-6" style="padding-left: 8px">
+            <input type="text" class="signup-input-fields">
         </div>
     </div>
 
     <div class="row element-distance-top">
+        <div class="col-sm-12 text-color">
+            Email
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-12">
-            <input type="text" class="signup-input-fields" placeholder="Business Name">
+            <input type="text" class="signup-input-fields">
+        </div>
+    </div>
+
+    <div class="row element-distance-top">
+        <div class="col-sm-12 text-color">
+            Password
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="text" class="signup-input-fields">
+        </div>
+    </div>
+
+    <div class="row element-distance-top">
+        <div class="col-sm-12 text-color">
+            Confirm Password
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="text" class="signup-input-fields">
+        </div>
+    </div>
+
+
+    <div class="row element-distance-top">
+        <div class="col-sm-12 text-color">
+            Business Name
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="text" class="signup-input-fields">
+        </div>
+    </div>
+
+    <div class="row  element-distance-top">
+        <div class="col-sm-12">
+            <select class="signup-input-fields">
+                <option>Business Category</option>
+            </select>
         </div>
     </div>
     <div class="row element-distance-top">

@@ -11,18 +11,38 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div id="welcome-note">
     <div>
-        <h3 style="font-weight: bold">Connect all world businesses on Earnbook</h3>
+        <h3 class="section-heading">Connect all world businesses on Earnbook</h3>
     </div>
 
-    <div>
-        <h5><i class="fa fa-check-circle-o welcome-note-icon"></i> Get your own business or personal website free. </h5>
+    <div class="related-element-spacing-left">
+        <div class="distance-between-heading-top">
+            <h5><i class="fa fa-check-circle-o welcome-note-icon"></i> Get your own business or personal website free. </h5>
+        </div>
+
+        <div>
+            <h5><i class="fa fa-check-circle-o welcome-note-icon" ></i> Promote your business all over. </h5>
+        </div>
+
+        <div>
+            <h5><i class="fa fa-check-circle-o welcome-note-icon"></i> Best deals. </h5>
+        </div>
     </div>
 
-    <div>
-        <h5><i class="fa fa-check-circle-o welcome-note-icon" ></i> Promote your business all over. </h5>
+    <div class="related-element-spacing-left">
+        <div  style="margin-top: 40px">
+            <div id="testimonial1"  class="testimonial-image-style" title="Earnbook is best programs."
+                 data-content="Earnbook is one of the best programs  I have seen so far on the Internet.  I am sure it will definitely make many  more millionaires  in the years to come.">
+                Datta
+            </div>
+        </div>
+
+        <div  style="margin-top: 40px">
+            <div id="testimonial2" class="testimonial-image-style" title="Earnbook is amazing."
+                 data-content="Earnbook is amazing. The start-up process is the best I've ever seen. So many people desire a profitable home business and .">
+                Arjun
+            </div>
+        </div>
     </div>
 
-    <div>
-        <h5><i class="fa fa-check-circle-o welcome-note-icon"></i> Best deals. </h5>
-    </div>
+
 </div>

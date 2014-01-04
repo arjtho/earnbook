@@ -59,6 +59,9 @@
         $(document).ready(function() {
             $('#search-categories').chosen();
             EbwLoginNS.init();
+
+            $("#testimonial1").popover('show');
+            $("#testimonial2").popover('show');
         });
     </script>
 </head>
