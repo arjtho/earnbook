@@ -11,7 +11,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div id="welcome-note">
     <div>
-        <h3 style="font-weight: bold;color:rgb(119, 118, 126)">Connect all world businesses on Earnbook</h3>
+        <h3 class="section-heading">Connect all world businesses on Earnbook</h3>
     </div>
 
     <div class="related-element-spacing-left">
@@ -30,14 +30,14 @@
 
     <div class="related-element-spacing-left">
         <div  style="margin-top: 40px">
-            <div id="testimonial1"  class="testimonial-image-style" title="Popover title"
+            <div id="testimonial1"  class="testimonial-image-style" title="Earnbook is best programs."
                  data-content="Earnbook is one of the best programs  I have seen so far on the Internet.  I am sure it will definitely make many  more millionaires  in the years to come.">
                 Datta
             </div>
         </div>
 
         <div  style="margin-top: 40px">
-            <div id="testimonial2" class="testimonial-image-style" title="Popover title"
+            <div id="testimonial2" class="testimonial-image-style" title="Earnbook is amazing."
                  data-content="Earnbook is amazing. The start-up process is the best I've ever seen. So many people desire a profitable home business and .">
                 Arjun
             </div>
