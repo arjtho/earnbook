@@ -10,7 +10,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div class="menu-bar-panel" id="earnbook-header-menu-bar">
-    <div class="app-max-width container" style="min-width: 300px">
+    <div class="app-max-width container">
         <div class="pull-left">
             <ul class="nav navbar-nav">
                 <li><a href="#" style="color:#000000;font-weight: bold"><spring:message code="menu.bar.home"/></a></li>
