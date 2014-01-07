@@ -55,22 +55,38 @@
              * @param url
              * @param dataToSend
              */
-            makeServerCall: function (actionName, url, dataToSend) {
-
-                var request = $.ajax({
-                    url: url,
+            makeServerCall: function (settings) {
+                var ajaxSetting = {
+                    url: "",
                     type: "POST",
-                    data: dataToSend,
-                    dataType: "html"
-                });
+                    params: "",
+                    dataType: "html",
+                    onSuccess: undefined,
+                    onFail : undefined,
+                    finally : undefined
+                };
 
-                request.done(function (msg) {
+                $.extend( ajaxSetting, settings );
+                if(ajaxSetting.url) {
+                    var request = $.ajax({
+                        url: ajaxSetting.url,
+                        type: "POST",
+                        data: JSON.stringify(ajaxSetting.params),
+                        dataType: "html"
+                    });
 
-                });
+                    request.done(function (data) {
+                        ebwAjax.onSuccess(data, ajaxSetting)
+                    });
 
-                request.fail(function (jqXHR, textStatus) {
+                    request.fail(function (jqXHR, textStatus) {
+                        ebwAjax.onFail(jqXHR, textStatus, ajaxSetting)
+                    });
 
-                });
+                    request.always(function (jqXHR, textStatus) {
+                        ebwAjax.finally(jqXHR, textStatus, ajaxSetting)
+                    });
+                }
             },
 
 

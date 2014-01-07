@@ -52,14 +52,13 @@
 
     <!-- Application js files -->
     <script src="resources/eb-web/js/constants/ebw-app-common.js"></script>
+    <script src="resources/eb-web/js/modal/vanilla-modal.js"></script>
     <script src="resources/eb-web/js/ajax/ebw-ajax.js"></script>
     <script src="resources/eb-web/js/login/ebw-login.js"></script>
 
     <script>
         $(document).ready(function() {
-            $('#search-categories').chosen();
             EbwLoginNS.init();
-
             $("#testimonial1").popover('show');
             $("#testimonial2").popover('show');
         });

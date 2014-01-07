@@ -30,4 +30,9 @@ public class LoginController {
         UserDetails userDetailsResult = loginService.doLogin(userDetails);
         return userDetailsResult;
     }
+
+    @RequestMapping(value="/getLoginPage", method = RequestMethod.POST)
+    public String getIndexPage(ModelMap mode) {
+        return "login/login";
+    }
 }
