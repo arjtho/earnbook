@@ -70,9 +70,9 @@
                 if(ajaxSetting.url) {
                     var request = $.ajax({
                         url: ajaxSetting.url,
-                        type: "POST",
+                        type: ajaxSetting.type,
                         data: JSON.stringify(ajaxSetting.params),
-                        dataType: "html"
+                        dataType: ajaxSetting.dataType
                     });
 
                     request.done(function (data) {
