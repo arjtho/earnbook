@@ -25,11 +25,27 @@
             },
 
             loginSuccess : function(response) {
-              alert(response);
+              alert("Login Success");
             },
 
             loginFail : function(jqXHR, textStatus) {
-                     alert("login failed");
+                var url = EbwAppCommmonNS.getUrl("/getLoginPage");
+                var setting = {
+                    url : url,
+                    onSuccess:ebwLogin.displayLoginPage,
+                    onFail: ebwLogin.displayLoginPage
+                };
+                EbwAjaxNS.makeServerCall(setting);
+            },
+
+
+            /**
+             * @param event
+             * @param response
+             */
+            displayLoginPage: function (response) {
+                EbwVanillaModalNS.showModal(350,505, response, "User Login");
+
             },
 
             getLoginParams:function() {
