@@ -15,7 +15,7 @@ public class LoginServiceImpl implements LoginService {
     private UserDao userDao;
 
     @Override
-    public UserDetails doLogin(UserDetails userDetails) {
+    public UserDetails doLogin(UserDetails userDetails)throws Exception{
         UserDetailsBuilder userDetailsResult = userDao.getUser(userDetails);
 
         return userDetailsResult.build();
