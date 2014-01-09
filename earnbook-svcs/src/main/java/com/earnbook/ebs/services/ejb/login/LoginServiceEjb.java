@@ -22,7 +22,7 @@ public class LoginServiceEjb  implements LoginService {
     private LoginService  loginService;
 
     @Override
-    public UserDetails doLogin(UserDetails userDetails) {
+    public UserDetails doLogin(UserDetails userDetails) throws Exception{
         return loginService.doLogin(userDetails);
     }
 
