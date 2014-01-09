@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="ear" name="earnbook-svcs:ear">
-    <output-path>$PROJECT_DIR$/earnbook-svcs/target/earnbook-svcs-ear</output-path>
-    <root id="archive" name="earnbook-svcs.ear">
-      <element id="artifact" artifact-name="earnbook-svcs:ear exploded" />
-    </root>
-  </artifact>
-</component>
