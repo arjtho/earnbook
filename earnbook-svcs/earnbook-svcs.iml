@@ -13,6 +13,9 @@
           <file>file://$MODULE_DIR$/src/main/spring-config/ebs-applicationContext-general-spring.xml</file>
           <file>file://$MODULE_DIR$/src/main/spring-config/ebs-applicationContext-services.xml</file>
           <file>file://$MODULE_DIR$/src/main/spring-config/ebs-applicationContext-transactions.xml</file>
+          <file>file://$MODULE_DIR$/src/main/spring/Hibernate.xml</file>
+          <file>file://$MODULE_DIR$/src/main/spring/beanRefContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/spring/ebs-applicationContext-entity-manager-factory.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -39,6 +42,12 @@
         <descriptors>
           <deploymentDescriptor name="application.xml" url="file://$MODULE_DIR$/target/earnbook-svcs-ear/application.xml" />
         </descriptors>
+      </configuration>
+    </facet>
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/spring/hibernate.cfg.xml" />
       </configuration>
     </facet>
   </component>
