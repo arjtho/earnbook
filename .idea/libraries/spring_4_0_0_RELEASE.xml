@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="spring-4.0.0.RELEASE">
+  <library name="spring-4.0.0.RELEASE" type="spring">
+    <properties version="4.0.0.RELEASE" />
     <CLASSES />
     <JAVADOC />
     <SOURCES />
