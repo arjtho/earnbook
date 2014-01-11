@@ -13,5 +13,4 @@
     <bean id="postCheckAspect" class="com.earnbook.ebs.aspect.EbServiceAspect"/>
 
 
-
 </beans>
