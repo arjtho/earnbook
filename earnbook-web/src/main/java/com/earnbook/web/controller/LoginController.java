@@ -2,7 +2,7 @@ package com.earnbook.web.controller;
 
 import com.earnbook.ebs.client.delegate.service.LoginService;
 import com.earnbook.ebs.client.model.domain.user.UserDetails;
-import com.earnbook.web.exception.EbException;
+import com.earnbook.ebs.client.exception.EbException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

@@ -1,4 +1,4 @@
-package com.earnbook.web.exception;
+package com.earnbook.ebs.client.exception;
 
 /**
  * Created by yash on 1/7/14.

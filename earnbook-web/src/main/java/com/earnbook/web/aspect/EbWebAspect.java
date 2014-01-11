@@ -1,13 +1,10 @@
 package com.earnbook.web.aspect;
 
-import com.earnbook.web.exception.EbException;
+import com.earnbook.ebs.client.exception.EbException;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by yash on 1/4/14.
