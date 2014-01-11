@@ -8,5 +8,7 @@ import javax.ejb.Remote;
 
 @Remote
 public interface LoginService {
-   public UserDetails doLogin(UserDetails userDetails) throws Exception;
+
+   public UserDetails doLogin(UserDetails userDetails) throws EBEx;
+
 }
