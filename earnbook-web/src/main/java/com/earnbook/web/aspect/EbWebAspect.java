@@ -5,7 +5,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-
+import com.earnbook.ebs.client.*;
 /**
  * Created by yash on 1/4/14.
  */
@@ -19,7 +19,7 @@ public class EbWebAspect {
     }
 
     @AfterThrowing(value="(execution(* com.earnbook.web.controller.*.*(..)))", throwing ="result", argNames = "")
-      public String callOnThrowException(JoinPoint joinPoint, EbException result) throws EbException{
+      public String callOnThrowException(JoinPoint joinPoint, EbException result) throws EbException {
         System.out.println(">>>>>>>>>> In callOnThrowException >>>>>>>>>>>>>>>>");
 
         return "user does not exist on Web AOP";

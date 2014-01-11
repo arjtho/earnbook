@@ -1,5 +1,6 @@
 package com.earnbook.ebs.aspect;
 
+import com.earnbook.ebs.client.exception.EbException;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
@@ -11,8 +12,8 @@ import org.aspectj.lang.annotation.Aspect;
 public class EbServiceAspect {
 
     @AfterThrowing(value="execution(* com.earnbook.ebs.client.delegate.service.*.*(..)))", throwing="exception")
-    public void callOnThrowException(JoinPoint joinPoint, Exception exception) throws Exception{
+    public void callOnThrowException(JoinPoint joinPoint, EbException exception) throws EbException{
         System.out.print(">>>>>>>>>> SERVICE >>>>: In callOnThrowException >>>>>>>>>>>>>>>>");
-        throw new Exception("user not found from service AOP");
+        throw new EbException("user not found from service AOP");
     }
 }

@@ -2,6 +2,7 @@ package com.earnbook.ebs.services.ejb.login;
 
 import com.earnbook.ebs.client.constant.JndiName;
 import com.earnbook.ebs.client.delegate.service.LoginService;
+import com.earnbook.ebs.client.exception.EbException;
 import com.earnbook.ebs.client.model.domain.user.UserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,7 +23,7 @@ public class LoginServiceEjb  implements LoginService {
     private LoginService  loginService;
 
     @Override
-    public UserDetails doLogin(UserDetails userDetails) throws Exception{
+    public UserDetails doLogin(UserDetails userDetails) throws EbException {
         return loginService.doLogin(userDetails);
     }
 

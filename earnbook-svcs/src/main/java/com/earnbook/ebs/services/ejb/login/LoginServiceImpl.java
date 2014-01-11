@@ -1,6 +1,7 @@
 package com.earnbook.ebs.services.ejb.login;
 
 import com.earnbook.ebs.client.delegate.service.LoginService;
+import com.earnbook.ebs.client.exception.EbException;
 import com.earnbook.ebs.client.model.domain.user.UserDetails;
 import com.earnbook.ebs.services.builder.user.UserDetailsBuilder;
 import com.earnbook.ebs.services.dao.user.UserDao;
@@ -15,7 +16,7 @@ public class LoginServiceImpl implements LoginService {
     private UserDao userDao;
 
     @Override
-    public UserDetails doLogin(UserDetails userDetails)throws Exception{
+    public UserDetails doLogin(UserDetails userDetails)throws EbException {
         UserDetailsBuilder userDetailsResult = userDao.getUser(userDetails);
 
         return userDetailsResult.build();

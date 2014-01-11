@@ -1,8 +1,8 @@
 package com.earnbook.web.controller;
 
 import com.earnbook.ebs.client.delegate.service.LoginService;
-import com.earnbook.ebs.client.model.domain.user.UserDetails;
 import com.earnbook.ebs.client.exception.EbException;
+import com.earnbook.ebs.client.model.domain.user.UserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,7 +27,7 @@ public class LoginController {
 
     @RequestMapping(value="/login", method = RequestMethod.POST, produces="application/json")
     @ResponseBody
-    public UserDetails doLogin(ModelMap model, @RequestBody UserDetails userDetails) throws Exception {
+    public UserDetails doLogin(ModelMap model, @RequestBody UserDetails userDetails) throws EbException {
         UserDetails userDetailsResult = loginService.doLogin(userDetails);
         return userDetailsResult;
     }
