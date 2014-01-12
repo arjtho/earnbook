@@ -3,7 +3,7 @@ package com.earnbook.ebs.client.exception;
 /**
  * Created by yash on 1/7/14.
  */
-public class EbException extends RuntimeException {
+public class EbException extends Exception {
 
     private String exceptionMsg;
 
