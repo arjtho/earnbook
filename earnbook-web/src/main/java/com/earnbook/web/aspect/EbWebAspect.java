@@ -22,10 +22,7 @@ public class EbWebAspect {
       public String callOnThrowException(JoinPoint joinPoint, EbException result) throws EbException {
         System.out.println(">>>>>>>>>> In callOnThrowException >>>>>>>>>>>>>>>>");
 
-        throw new EbException(result.getMessage());
+        throw new EbException("user does not exist on Web AOP");
 
     }
-
-
-
 }
