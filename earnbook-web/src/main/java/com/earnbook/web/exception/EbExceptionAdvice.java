@@ -19,15 +19,15 @@ import java.util.Date;
 @ControllerAdvice
 public class EbExceptionAdvice {
 
-    @ExceptionHandler(EbException.class)
+    @ExceptionHandler(Exception.class)
     @ResponseBody
-    public ModelAndView exception(EbException e, HttpServletRequest request){
+    public ModelAndView exception(Exception e, HttpServletRequest request){
         ModelAndView mav = new ModelAndView("index");
         mav.addObject("name", e.getClass().getSimpleName());
         mav.addObject("message", e.getMessage());
         mav.addObject("status", 500);
 
-        System.out.println(request.getHeader("X-Requested-With"));
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>In Advice " + request.getHeader("X-Requested-With") + ">>>>>>>>>>>>>>>>>");
         return mav;
     }
 }
