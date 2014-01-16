@@ -16,7 +16,7 @@ public class EbExceptionAdvice {
     @ExceptionHandler(Exception.class)
     @ResponseBody
     public ModelAndView exception(Exception e, HttpServletRequest request){
-        ModelAndView mav = new ModelAndView("index");
+        ModelAndView mav = new ModelAndView("login/login");
         mav.addObject("name", e.getClass().getSimpleName());
         mav.addObject("message", e.getMessage());
         mav.addObject("status", 500);

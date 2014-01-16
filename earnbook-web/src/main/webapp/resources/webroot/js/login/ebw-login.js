@@ -10,16 +10,16 @@
 
         return {
             init: function () {
-                $("#btnLogin").on("click", ebwLogin.doLogin);
+                $("#btnLogin").on("click", function(){ebwLogin.doLogin(ebwLogin.loginFail,"#ebw-login-");});
             },
 
-            doLogin: function() {
+            doLogin: function(loginFailedCallback, paramPrefix) {
                 var url = EbwAppCommmonNS.getUrl("/login");
                 var setting = {
                     url : url,
                     onSuccess:ebwLogin.loginSuccess,
-                    onFail : ebwLogin.loginFail,
-                    params: ebwLogin.getLoginParams()
+                    onFail : loginFailedCallback,
+                    params: ebwLogin.getLoginParams(paramPrefix)
                 };
                 EbwAjaxNS.makeServerCallToGetJson(setting);
             },
@@ -28,28 +28,27 @@
               alert("Login Success");
             },
 
+            loginRetryFailed : function() {
+                $("#login-error-message-box").show();
+            },
+
             loginFail : function(jqXHR, textStatus) {
-                var url = EbwAppCommmonNS.getUrl("/getLoginPage");
-                var setting = {
-                    url : url,
-                    onSuccess:ebwLogin.displayLoginPage,
-                    onFail: ebwLogin.displayLoginPage
-                };
-                EbwAjaxNS.makeServerCall(setting);
+                if(jqXHR) {
+                    EbwVanillaModalNS.showModal(350,505, jqXHR.responseText, "User Login");
+                    var loginFieldPrefix = "#ebw-retry-login-";
+                    $(loginFieldPrefix+ 'userId').val(ebwLogin.getLoginParams("#ebw-login-").email);
+                    var keepMeLoggedIn = $('#keepMeLoggedIn', $('#header-login-container')).is(':checked');
+                    if(keepMeLoggedIn) {
+                        $("#keepMeLoggedInOnLogin").attr('checked', true);
+                    }
+                    $(loginFieldPrefix + "password").on("keypress",function() {
+                          $("#login-error-message-box").hide();
+                    });
+                    $("#retryLoginBtn").on("click", function(){ebwLogin.doLogin(ebwLogin.loginRetryFailed,loginFieldPrefix);});
+                }
             },
 
-
-            /**
-             * @param event
-             * @param response
-             */
-            displayLoginPage: function (response) {
-                EbwVanillaModalNS.showModal(350,505, response, "User Login");
-
-            },
-
-            getLoginParams:function() {
-                var fieldPrefix= "#ebw-login-";
+            getLoginParams:function(fieldPrefix) {
                 var userId = $(fieldPrefix + "userId").val();
                 var password = $(fieldPrefix + "password").val();
                 return {

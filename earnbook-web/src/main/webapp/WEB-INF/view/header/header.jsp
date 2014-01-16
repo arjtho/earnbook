@@ -39,7 +39,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-5 header-element-spacing ">
-                    <input type="checkbox" class="input-checkbox-small" style="margin-top: -4px">
+                    <input type="checkbox" id="keepMeLoggedIn" class="input-checkbox-small" style="margin-top: -4px">
                     <label class="input-label-small header-lable-padding"> <spring:message code="login.user.keep.logged.in"/></label>
                 </div>
                 <div class="col-sm-5 header-element-spacing ">

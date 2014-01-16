@@ -30,7 +30,7 @@
             <div class="col-lg-6">
                 <div class="input-group margin-bottom-sm">
                     <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                    <input id="login-email" class="form-control login-fields" type="text" placeholder='User Name'>
+                    <input id="ebw-retry-login-userId" class="form-control login-fields" type="text" placeholder='User Name'>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
             <div class="col-lg-6">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                    <input id="login-password" class="form-control login-fields" type="password" placeholder='Password'>
+                    <input id="ebw-retry-login-password" class="form-control login-fields" type="password" placeholder='Password'>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="col-lg-6">
                 <div>
-                    <input type="checkbox" class="input-checkbox-small" style="margin-top: -4px">
+                    <input type="checkbox" id="keepMeLoggedInOnLogin" class="input-checkbox-small" style="margin-top: -4px">
                     <label class="header-lable-padding" style="font-weight: normal"> <spring:message code="login.user.keep.logged.in"/></label>
                 </div>
             </div>
@@ -72,7 +72,7 @@
 
             <div class="col-lg-12" style=" text-align: center">
                 <div>
-                    <button class="btn btn-primary" type="button">
+                    <button id="retryLoginBtn" class="btn btn-primary" type="button">
                        Login
                     </button>
                 </div>
