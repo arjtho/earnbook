@@ -13,7 +13,7 @@ public class EbServiceAspect {
 
     @AfterThrowing(value="execution(* com.earnbook.ebs.client.delegate.service.*.*(..)))", throwing="exception")
     public void callOnThrowException(JoinPoint joinPoint, EbException exception) throws EbException{
-        System.out.print(">>>>>>>>>> SERVICE >>>>: In callOnThrowException >>>>>>>>>>>>>>>>");
+        System.out.println(">>>>>>>>>> SERVICE >>>>: In callOnThrowException >>>>>>>>>>>>>>>>");
         throw new EbException("user not found from service AOP");
     }
 }

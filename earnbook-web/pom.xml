@@ -138,6 +138,7 @@
         </dependency>
     </dependencies>
 
+
     <build>
         <finalName>earnbook-web</finalName>
         <plugins>
