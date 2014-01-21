@@ -29,7 +29,7 @@
             },
 
             loginRetryFailed : function() {
-                $("#login-error-message-box").show();
+                ebwLogin.showErrorMessage("server");
             },
 
             loginFail : function(jqXHR, textStatus) {
@@ -41,11 +41,32 @@
                     if(keepMeLoggedIn) {
                         $("#keepMeLoggedInOnLogin").attr('checked', true);
                     }
-                    $(loginFieldPrefix + "password").on("keypress",function() {
-                          $("#login-error-message-box").hide();
+                    $(loginFieldPrefix + "password").on("keypress",ebwLogin.hideErrorMessage);
+                    $(loginFieldPrefix + "userId").on("keypress",ebwLogin.hideErrorMessage);
+                    ebwLogin.showErrorMessage("server");
+                    $("#retryLoginBtn").on("click", function(){
+                        var errorFields = ebwLogin.validateLogin(loginFieldPrefix);
+                        if(errorFields.length > 0) {
+                            EbwValidatorNS.indicateErrorFields(errorFields, null);
+                            ebwLogin.showErrorMessage("client");
+                        } else {
+                            ebwLogin.doLogin(ebwLogin.loginRetryFailed,loginFieldPrefix);
+                        }
+
                     });
-                    $("#retryLoginBtn").on("click", function(){ebwLogin.doLogin(ebwLogin.loginRetryFailed,loginFieldPrefix);});
                 }
+            },
+
+            hideErrorMessage: function() {
+                $("#login-error-message-server").hide();
+                $("#login-error-message-client").hide();
+                $("#login-error-message-box").hide();
+            },
+
+            showErrorMessage: function(type) {
+                ebwLogin.hideErrorMessage();
+                $("#login-error-message-" + type).show();
+                $("#login-error-message-box").show();
             },
 
             getLoginParams:function(fieldPrefix) {
@@ -61,8 +82,7 @@
              *
              * @returns {boolean}
              */
-            validateLogin: function(){
-                var fieldPrefix= "#ebw-login-";
+            validateLogin: function(fieldPrefix){
                 var errorFields = [];
 
                 var email = $(fieldPrefix + "userId");
