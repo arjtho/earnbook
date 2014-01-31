@@ -3,6 +3,9 @@ package com.earnbook.web.controller;
 import com.earnbook.ebs.client.delegate.service.LoginService;
 import com.earnbook.ebs.client.exception.EbException;
 import com.earnbook.ebs.client.model.domain.user.UserDetails;
+import com.earnbook.ebs.client.model.domain.user.UserSignUpDetails;
+import com.earnbook.web.helper.UserHelper;
+import com.earnbook.web.modal.UserRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,8 +30,17 @@ public class LoginController {
 
     @RequestMapping(value="/login", method = RequestMethod.POST, produces="application/json")
     @ResponseBody
-    public UserDetails doLogin(ModelMap model, @RequestBody UserDetails userDetails) throws EbException {
+    public UserDetails doLogin(ModelMap model, @RequestBody UserRequest userRequest) throws EbException {
+        UserDetails userDetails = UserHelper.getUserDetails(userRequest);
         UserDetails userDetailsResult = loginService.doLogin(userDetails);
+        return userDetailsResult;
+    }
+
+    @RequestMapping(value="/signup", method = RequestMethod.POST, produces="application/json")
+    @ResponseBody
+    public UserDetails doSignUp(ModelMap model, @RequestBody UserRequest userRequest) throws EbException {
+        UserSignUpDetails userSignUpDetails = UserHelper.getUserSignUpDetails(userRequest);
+        UserDetails userDetailsResult = loginService.doSignUp(userSignUpDetails);
         return userDetailsResult;
     }
 

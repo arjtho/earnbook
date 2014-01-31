@@ -11,21 +11,46 @@
         return {
             init: function () {
                 $("#btnLogin").on("click", function(){ebwLogin.doLogin(ebwLogin.loginFail,"#ebw-login-");});
+                $("#btnSignup").on("click", ebwLogin.doSignUp);
             },
 
-            doLogin: function(loginFailedCallback, paramPrefix) {
+            doLogin: function(loginFail, paramPrefix) {
                 var url = EbwAppCommmonNS.getUrl("/login");
                 var setting = {
                     url : url,
                     onSuccess:ebwLogin.loginSuccess,
-                    onFail : loginFailedCallback,
+                    onFail : loginFail,
                     params: ebwLogin.getLoginParams(paramPrefix)
                 };
                 EbwAjaxNS.makeServerCallToGetJson(setting);
             },
 
+            doSignUp: function() {
+                var errorFields = ebwLogin.validateSignUp();
+                if(errorFields.length > 0) {
+                    EbwValidatorNS.indicateErrorFields(errorFields, null);
+                } else {
+                    var url = EbwAppCommmonNS.getUrl("/signup");
+                    var setting = {
+                        url : url,
+                        onSuccess:ebwLogin.singUpSuccess,
+                        onFail : ebwLogin.signUpFail,
+                        params: ebwLogin.getSignUpParams()
+                    };
+                    EbwAjaxNS.makeServerCallToGetJson(setting);
+                }
+            },
+
             loginSuccess : function(response) {
               alert("Login Success");
+            },
+
+            signUpFail : function(jqXHR, textStatus) {
+                alert("Signup Fail");
+            },
+
+            singUpSuccess : function(response) {
+                alert("Signup Success");
             },
 
             loginRetryFailed : function() {
@@ -69,6 +94,24 @@
                 $("#login-error-message-box").show();
             },
 
+            getSignUpParams: function() {
+
+                var firstName = $("#signup-first-name").val();
+                var lastName = $("#signup-last-name").val();
+                var email =  $("#signup-email").val();
+                var password = $("#signup-password").val();
+                var businessName = $("#signup-business-name").val();
+                var businessCategory = $("#signup-business-category").val();
+                return {
+                    firstName : firstName,
+                    lastName :  lastName,
+                    email: email,
+                    password: password,
+                    businessName : businessName,
+                    businessCategory: businessCategory
+                }
+            },
+
             getLoginParams:function(fieldPrefix) {
                 var userId = $(fieldPrefix + "userId").val();
                 var password = $(fieldPrefix + "password").val();
@@ -96,7 +139,48 @@
                     errorFields.push(password);
                 }
                 return errorFields;
+            },
+            /**
+             *
+             * @returns {boolean}
+             */
+            validateSignUp: function(){
+                var errorFields = [];
+                var firstName = $("#signup-first-name");
+                var lastName = $("#signup-last-name");
+                var email =  $("#signup-email");
+                var password = $("#signup-password");
+                var confirmPassword = $("#signup-password-confirm");
+                var businessName = $("#signup-business-name");
+                var businessCategory = $("#signup-business-category");
+
+                if(!EbwValidatorNS.isValidEmail(email)) {
+                    errorFields.push(email);
+                }
+
+                if(!EbwValidatorNS.isValidLength(password, 6)) {
+                    errorFields.push(password);
+                }
+
+                if(!EbwValidatorNS.isValidLength(firstName, 1)) {
+                    errorFields.push(firstName);
+                }
+
+                if(!EbwValidatorNS.isValidLength(lastName, 1)) {
+                    errorFields.push(lastName);
+                }
+
+                if(!EbwValidatorNS.isValidLength(businessName, 1)) {
+                    errorFields.push(businessName);
+                }
+
+                if(!EbwValidatorNS.match(password, confirmPassword)) {
+                    errorFields.push(confirmPassword);
+                }
+                return errorFields;
             }
+
+
         }
     }());
     //@sourceURL = resources/eb-web/js/login/ebw-login.js

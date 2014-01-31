@@ -2,6 +2,7 @@ package com.earnbook.ebs.services.dao.user;
 
 import com.earnbook.ebs.client.exception.EbException;
 import com.earnbook.ebs.client.model.domain.user.UserDetails;
+import com.earnbook.ebs.client.model.domain.user.UserSignUpDetails;
 import com.earnbook.ebs.services.builder.user.UserDetailsBuilder;
 import com.earnbook.ebs.services.persistence.user.UserJpa;
 import org.hibernate.Criteria;
@@ -30,12 +31,8 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void add(UserDetails user) {
-
-
-
-
-
+    public UserDetailsBuilder add(UserSignUpDetails userSignUpDetails) {
+        return  new UserDetailsBuilder().setFirstName("New User");
     }
 
     @Override
