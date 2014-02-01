@@ -1,5 +1,6 @@
 package com.earnbook.web.helper;
 
+import com.earnbook.ebs.client.model.domain.user.Business;
 import com.earnbook.ebs.client.model.domain.user.UserDetails;
 import com.earnbook.ebs.client.model.domain.user.UserSignUpDetails;
 import com.earnbook.web.modal.UserRequest;
@@ -19,8 +20,10 @@ public class UserHelper {
         userDetails.setEmail(userRequest.getEmail());
         userDetails.setPassword(userRequest.getPassword());
         userDetails.setLastName(userRequest.getLastName());
-        UserSignUpDetails userSignUpDetails= new UserSignUpDetails(userDetails,
-                userRequest.getBusinessName(), userRequest.getBusinessCategory());
+        Business business = new Business();
+        business.setBusinessCategory(userRequest.getBusinessCategory());
+        business.setBusinessName(userRequest.getBusinessName());
+        UserSignUpDetails userSignUpDetails= new UserSignUpDetails(userDetails, business);
         return userSignUpDetails;
     }
 

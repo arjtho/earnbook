@@ -9,17 +9,14 @@ public class UserSignUpDetails implements Serializable {
     private static final long serialVersionUID = 1L;
 
     UserDetails  userDetails;
-    String businessName;
-    String businessCategory;
-
+    Business business;
     public UserSignUpDetails() {
 
     }
 
-    public UserSignUpDetails(UserDetails theUserDetails, String theBusinessName, String theBusinessCategory) {
+    public UserSignUpDetails(UserDetails theUserDetails, Business business) {
         this.userDetails = theUserDetails;
-        this.businessName = theBusinessName;
-        this.businessCategory = theBusinessCategory;
+        this.business = business;
     }
 
     public UserDetails getUserDetails() {
@@ -30,19 +27,11 @@ public class UserSignUpDetails implements Serializable {
         this.userDetails = userDetails;
     }
 
-    public String getBusinessName() {
-        return businessName;
+    public Business getBusiness() {
+        return business;
     }
 
-    public void setBusinessName(String businessName) {
-        this.businessName = businessName;
-    }
-
-    public String getBusinessCategory() {
-        return businessCategory;
-    }
-
-    public void setBusinessCategory(String businessCategory) {
-        this.businessCategory = businessCategory;
+    public void setBusiness(Business business) {
+        this.business = business;
     }
 }

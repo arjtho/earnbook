@@ -2,6 +2,7 @@ package com.earnbook.web.modal;
 
 
 import java.io.Serializable;
+import java.util.Set;
 
 
 public class UserRequest implements Serializable {
@@ -14,7 +15,7 @@ public class UserRequest implements Serializable {
     private String password;
     private String email;
     private String businessName;
-    private String businessCategory;
+    private Set businessCategory;
 
     public UserRequest() {
     }
@@ -29,7 +30,7 @@ public class UserRequest implements Serializable {
     }
 
     public UserRequest(long id, String email, String password, String firstName, String lastName,
-                       String businessName ,String businessCategory ) {
+                       String businessName , Set businessCategory ) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -89,11 +90,11 @@ public class UserRequest implements Serializable {
         this.businessName = businessName;
     }
 
-    public String getBusinessCategory() {
+    public Set getBusinessCategory() {
         return businessCategory;
     }
 
-    public void setBusinessCategory(String businessCategory) {
+    public void setBusinessCategory(Set businessCategory) {
         this.businessCategory = businessCategory;
     }
 }

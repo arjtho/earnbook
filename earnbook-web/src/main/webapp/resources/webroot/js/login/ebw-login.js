@@ -11,25 +11,57 @@
         return {
             init: function () {
                 $("#btnLogin").on("click", function(){ebwLogin.doLogin(ebwLogin.loginFail,"#ebw-login-");});
+                $("#btnSignup").on("click", ebwLogin.doSignUp);
             },
 
-            doLogin: function(loginFailedCallback, paramPrefix) {
-                var url = EbwAppCommmonNS.getUrl("/login");
-                var setting = {
-                    url : url,
-                    onSuccess:ebwLogin.loginSuccess,
-                    onFail : loginFailedCallback,
-                    params: ebwLogin.getLoginParams(paramPrefix)
-                };
-                EbwAjaxNS.makeServerCallToGetJson(setting);
+            doLogin: function(loginFail, paramPrefix) {
+                var loginFieldPrefix = "#ebw-login-";
+                var errorFields = ebwLogin.validateLogin(loginFieldPrefix);
+                if(errorFields.length > 0) {
+                    EbwValidatorNS.indicateErrorFields(errorFields, null);
+                } else {
+                    var url = EbwAppCommmonNS.getUrl("/login");
+                    var loginParams = ebwLogin.getLoginParams(paramPrefix);
+                    var setting = {
+                        url : url,
+                        onSuccess:ebwLogin.loginSuccess,
+                        onFail : loginFail,
+                        params: loginParams
+                    };
+                    EbwAjaxNS.makeServerCallToGetJson(setting);
+                }
+            },
+
+            doSignUp: function() {
+                var errorFields = ebwLogin.validateSignUp();
+                if(errorFields.length > 0) {
+                    EbwValidatorNS.indicateErrorFields(errorFields, null);
+                } else {
+                    var url = EbwAppCommmonNS.getUrl("/signup");
+                    var setting = {
+                        url : url,
+                        onSuccess:ebwLogin.singUpSuccess,
+                        onFail : ebwLogin.signUpFail,
+                        params: ebwLogin.getSignUpParams()
+                    };
+                    EbwAjaxNS.makeServerCallToGetJson(setting);
+                }
             },
 
             loginSuccess : function(response) {
               alert("Login Success");
             },
 
+            signUpFail : function(jqXHR, textStatus) {
+                alert("Signup Fail");
+            },
+
+            singUpSuccess : function(response) {
+                alert("Signup Success");
+            },
+
             loginRetryFailed : function() {
-                $("#login-error-message-box").show();
+                ebwLogin.showErrorMessage("server");
             },
 
             loginFail : function(jqXHR, textStatus) {
@@ -41,10 +73,49 @@
                     if(keepMeLoggedIn) {
                         $("#keepMeLoggedInOnLogin").attr('checked', true);
                     }
-                    $(loginFieldPrefix + "password").on("keypress",function() {
-                          $("#login-error-message-box").hide();
+                    $(loginFieldPrefix + "password").on("keypress",ebwLogin.hideErrorMessage);
+                    $(loginFieldPrefix + "userId").on("keypress",ebwLogin.hideErrorMessage);
+                    ebwLogin.showErrorMessage("server");
+                    $("#retryLoginBtn").on("click", function(){
+                        var errorFields = ebwLogin.validateLogin(loginFieldPrefix);
+                        if(errorFields.length > 0) {
+                            EbwValidatorNS.indicateErrorFields(errorFields, null);
+                            ebwLogin.showErrorMessage("client");
+                        } else {
+                            ebwLogin.doLogin(ebwLogin.loginRetryFailed,loginFieldPrefix);
+                        }
+
                     });
-                    $("#retryLoginBtn").on("click", function(){ebwLogin.doLogin(ebwLogin.loginRetryFailed,loginFieldPrefix);});
+                }
+            },
+
+            hideErrorMessage: function() {
+                $("#login-error-message-server").hide();
+                $("#login-error-message-client").hide();
+                $("#login-error-message-box").hide();
+            },
+
+            showErrorMessage: function(type) {
+                ebwLogin.hideErrorMessage();
+                $("#login-error-message-" + type).show();
+                $("#login-error-message-box").show();
+            },
+
+            getSignUpParams: function() {
+
+                var firstName = $("#signup-first-name").val();
+                var lastName = $("#signup-last-name").val();
+                var email =  $("#signup-email").val();
+                var password = $("#signup-password").val();
+                var businessName = $("#signup-business-name").val();
+                var businessCategory = $("#signup-business-category").val();
+                return {
+                    firstName : firstName,
+                    lastName :  lastName,
+                    email: email,
+                    password: password,
+                    businessName : businessName,
+                    businessCategory: [11,22,33]
                 }
             },
 
@@ -61,8 +132,7 @@
              *
              * @returns {boolean}
              */
-            validateLogin: function(){
-                var fieldPrefix= "#ebw-login-";
+            validateLogin: function(fieldPrefix){
                 var errorFields = [];
 
                 var email = $(fieldPrefix + "userId");
@@ -76,7 +146,48 @@
                     errorFields.push(password);
                 }
                 return errorFields;
+            },
+            /**
+             *
+             * @returns {boolean}
+             */
+            validateSignUp: function(){
+                var errorFields = [];
+                var firstName = $("#signup-first-name");
+                var lastName = $("#signup-last-name");
+                var email =  $("#signup-email");
+                var password = $("#signup-password");
+                var confirmPassword = $("#signup-password-confirm");
+                var businessName = $("#signup-business-name");
+                var businessCategory = $("#signup-business-category");
+
+                if(!EbwValidatorNS.isValidEmail(email)) {
+                    errorFields.push(email);
+                }
+
+                if(!EbwValidatorNS.isValidLength(password, 6)) {
+                    errorFields.push(password);
+                }
+
+                if(!EbwValidatorNS.isValidLength(firstName, 1)) {
+                    errorFields.push(firstName);
+                }
+
+                if(!EbwValidatorNS.isValidLength(lastName, 1)) {
+                    errorFields.push(lastName);
+                }
+
+                if(!EbwValidatorNS.isValidLength(businessName, 1)) {
+                    errorFields.push(businessName);
+                }
+
+                if(!EbwValidatorNS.match(password, confirmPassword)) {
+                    errorFields.push(confirmPassword);
+                }
+                return errorFields;
             }
+
+
         }
     }());
     //@sourceURL = resources/eb-web/js/login/ebw-login.js
