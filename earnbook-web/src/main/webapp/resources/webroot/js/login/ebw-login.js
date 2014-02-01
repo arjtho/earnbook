@@ -15,14 +15,21 @@
             },
 
             doLogin: function(loginFail, paramPrefix) {
-                var url = EbwAppCommmonNS.getUrl("/login");
-                var setting = {
-                    url : url,
-                    onSuccess:ebwLogin.loginSuccess,
-                    onFail : loginFail,
-                    params: ebwLogin.getLoginParams(paramPrefix)
-                };
-                EbwAjaxNS.makeServerCallToGetJson(setting);
+                var loginFieldPrefix = "#ebw-login-";
+                var errorFields = ebwLogin.validateLogin(loginFieldPrefix);
+                if(errorFields.length > 0) {
+                    EbwValidatorNS.indicateErrorFields(errorFields, null);
+                } else {
+                    var url = EbwAppCommmonNS.getUrl("/login");
+                    var loginParams = ebwLogin.getLoginParams(paramPrefix);
+                    var setting = {
+                        url : url,
+                        onSuccess:ebwLogin.loginSuccess,
+                        onFail : loginFail,
+                        params: loginParams
+                    };
+                    EbwAjaxNS.makeServerCallToGetJson(setting);
+                }
             },
 
             doSignUp: function() {
@@ -108,7 +115,7 @@
                     email: email,
                     password: password,
                     businessName : businessName,
-                    businessCategory: businessCategory
+                    businessCategory: [11,22,33]
                 }
             },
 
