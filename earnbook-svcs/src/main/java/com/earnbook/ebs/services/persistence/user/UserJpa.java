@@ -3,6 +3,8 @@ package com.earnbook.ebs.services.persistence.user;
 
 
 
+import com.earnbook.ebs.client.model.domain.user.Business;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -17,6 +19,7 @@ public class UserJpa implements Serializable {
     private String lastName;
     private String password;
     private String email;
+    private BusinessJpa userBusiness;
 
     public UserJpa() {
     }
@@ -73,5 +76,18 @@ public class UserJpa implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinTable(name="user_business_xref",
+            joinColumns = {@JoinColumn(name="business_id", referencedColumnName="id")},
+            inverseJoinColumns = {@JoinColumn(name="user_id", referencedColumnName="id")}
+    )
+    public BusinessJpa getUserBusiness() {
+        return userBusiness;
+    }
+
+    public void setUserBusiness(BusinessJpa userBusiness) {
+        this.userBusiness = userBusiness;
     }
 }
