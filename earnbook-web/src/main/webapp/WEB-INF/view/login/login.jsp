@@ -8,12 +8,15 @@
 <%@ taglib prefix = "spring" uri = "http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<div id="login-error-message-box" class="error-message-box-outline login-fields">
-    <div class="error-icon-box">
-        <i class="fa fa-exclamation-circle" style="color: red;font-size: 30px"></i>
-    </div>
-    <div class="error-message-box">
-        <span id="login-error-message" style="margin-left: 12px"> User Id/Email or password is invalid. Please correct it. </span>
+<div style="height: 50px">
+    <div id="login-error-message-box" class="error-message-box-outline login-fields">
+        <div class="error-icon-box">
+            <i class="fa fa-exclamation-circle" style="color: red;font-size: 30px"></i>
+        </div>
+        <div class="error-message-box">
+            <span id="login-error-message-server" style="margin-left: 12px;display: none"> User Id/Email or password is invalid. </span>
+            <span id="login-error-message-client" style="margin-left: 12px;display: none"> Please correct the below indicated field(s). </span>
+        </div>
     </div>
 </div>
 

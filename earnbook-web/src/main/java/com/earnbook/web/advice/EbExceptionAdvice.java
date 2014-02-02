@@ -1,5 +1,6 @@
 package com.earnbook.web.advice;
 
+import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @ControllerAdvice
 public class EbExceptionAdvice {
+    private static final Logger logger = Logger.getLogger(EbExceptionAdvice.class);
 
     @ExceptionHandler(Exception.class)
     @ResponseBody
@@ -20,8 +22,7 @@ public class EbExceptionAdvice {
         mav.addObject("name", e.getClass().getSimpleName());
         mav.addObject("message", e.getMessage());
         mav.addObject("status", 500);
-
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>In EbExceptionAdvice " + request.getHeader("X-Requested-With"));
+        logger.info(">>>>>>>>>>>>>Logging framework>>>>>>>>>In EbExceptionAdvice " + request.getHeader("X-Requested-With"));
         return mav;
     }
 }

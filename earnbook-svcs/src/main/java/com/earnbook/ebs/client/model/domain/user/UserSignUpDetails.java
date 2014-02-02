@@ -11,7 +11,6 @@ public class UserSignUpDetails implements Serializable {
     UserDetails  userDetails;
     Business business;
     public UserSignUpDetails() {
-
     }
 
     public UserSignUpDetails(UserDetails theUserDetails, Business business) {

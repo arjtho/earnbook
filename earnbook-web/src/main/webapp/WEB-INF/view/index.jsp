@@ -53,6 +53,7 @@
     <!-- Application js files -->
     <script src="resources/eb-web/js/constants/ebw-app-common.js"></script>
     <script src="resources/eb-web/js/modal/vanilla-modal.js"></script>
+    <script src="resources/eb-web/js/validation/validator.js"></script>
     <script src="resources/eb-web/js/ajax/ebw-ajax.js"></script>
     <script src="resources/eb-web/js/login/ebw-login.js"></script>
 

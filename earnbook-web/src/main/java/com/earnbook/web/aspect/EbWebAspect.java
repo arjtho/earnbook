@@ -20,7 +20,8 @@ public class EbWebAspect {
 
     @AfterThrowing(value="(execution(* com.earnbook.web.controller.*.*(..)))", throwing ="result")
       public String callOnThrowException(JoinPoint joinPoint, EbException result) throws EbException {
-        System.out.println(">>>>>>>>>> web In callOnThrowException >>>>>>>>>>>>>>>>");
+        System.out.println(">>>>>>>>>> In callOnThrowException >>>>>>>>>>>>>>>>");
+
         throw new EbException("user does not exist on Web AOP");
 
     }
