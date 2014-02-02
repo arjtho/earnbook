@@ -1,5 +1,7 @@
 package com.earnbook.ebs.client.model.domain.user;
 
+import java.io.Serializable;
+
 /**
  * Created with IntelliJ IDEA.
  * User: kranti
@@ -7,7 +9,7 @@ package com.earnbook.ebs.client.model.domain.user;
  * Time: 1:35 PM
  * To change this template use File | Settings | File Templates.
  */
-public class BusinessCategory {
+public class BusinessCategory implements Serializable {
     private long id;
     private String categoryName;
 

@@ -13,6 +13,9 @@ public class BusinessJpa {
     private String businessName;
     private Set<BusinessCategoryJpa> categoryJpa;
 
+    public  BusinessJpa() {
+
+    }
     public long getId() {
         return id;
     }

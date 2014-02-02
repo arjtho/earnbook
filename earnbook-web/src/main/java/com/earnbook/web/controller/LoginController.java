@@ -39,8 +39,14 @@ public class LoginController {
     @RequestMapping(value="/signup", method = RequestMethod.POST, produces="application/json")
     @ResponseBody
     public UserDetails doSignUp(ModelMap model, @RequestBody UserRequest userRequest) throws EbException {
-        UserSignUpDetails userSignUpDetails = UserHelper.getUserSignUpDetails(userRequest);
-        UserDetails userDetailsResult = loginService.doSignUp(userSignUpDetails);
+        UserDetails userDetailsResult = null;
+       try {
+           UserSignUpDetails userSignUpDetails = UserHelper.getUserSignUpDetails(userRequest);
+            userDetailsResult = loginService.doSignUp(userSignUpDetails);
+
+       }catch (Exception e) {
+             System.out.println( e.getMessage());
+       }
         return userDetailsResult;
     }
 

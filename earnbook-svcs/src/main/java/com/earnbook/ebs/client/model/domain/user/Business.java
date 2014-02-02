@@ -1,5 +1,6 @@
 package com.earnbook.ebs.client.model.domain.user;
 
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Set;
  * Time: 1:25 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Business {
+public class Business implements Serializable {
     private long id;
     private String businessName;
     private Set<BusinessCategory> businessCategory;
