@@ -30,6 +30,7 @@ public class LoginServiceEjb  implements LoginService {
 
     @Override
     public UserDetails doSignUp(UserSignUpDetails userSignUpDetails) throws EbException {
+        System.out.println(">>>> do signUp >>>>>>");
         return loginService.doSignUp(userSignUpDetails);
     }
 

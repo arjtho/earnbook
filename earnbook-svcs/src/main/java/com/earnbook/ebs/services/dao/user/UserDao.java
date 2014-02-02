@@ -10,6 +10,6 @@ import com.earnbook.ebs.services.builder.user.UserDetailsBuilder;
  */
 public interface UserDao {
     public UserDetailsBuilder getUser(UserDetails user) throws EbException;
-    public UserDetailsBuilder add(UserSignUpDetails userSignUpDetails);
+    public UserDetailsBuilder add(UserSignUpDetails userSignUpDetails) throws EbException;
     public void delete(UserDetails user);
 }

@@ -24,6 +24,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public UserDetails doSignUp(UserSignUpDetails userSignUpDetails) throws EbException {
+        System.out.println(">>>> do signUp LoginservImpl  >>>>>>");
         UserDetailsBuilder userDetailsResult = userDao.add(userSignUpDetails);
         return userDetailsResult.build();
     }
