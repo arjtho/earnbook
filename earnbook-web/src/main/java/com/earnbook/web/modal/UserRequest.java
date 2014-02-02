@@ -17,6 +17,7 @@ public class UserRequest implements Serializable {
     private String businessName;
     private Set businessCategory;
 
+
     public UserRequest() {
     }
 
